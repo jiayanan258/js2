@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实例</title>
+</head>
+<body>
+	<script>
+				
+		输出小于10的数
+		for(var i=1;i<10;i++){
+			alert(i);
+		}
+		
+		
+		
+		1~10以内的数求和
+		var sum=0;
+		for(var i=0;i<=10;i++){
+			sum+=i;			
+		}
+       alert(sum);
+       
+       
+       
+    1~10以内的偶数求和
+    var sum=0;
+      for(i=0;i<=10;i+=2){        	
+      	sum+=i;	        	      	
+       }
+    alert(sum);
+        
+        
+        
+        
+     for(var j=1;j<=5;j++){
+       for(var i=1;i<=j;i++){
+        	document.write("*");
+          	}
+        	document.write("<br/>");
+        }
+         
+         
+       
+       九九乘法表，隔行变色 
+        function biao(row){        
+        document.write("<table cellspecing=5>")
+        for(i=1;i<=row;i++){
+        	if(i%2==0){
+            document.write("<tr bgcolor=blue>")
+        }
+       else{
+            document.write("<tr bgcolor=red>")
+        }
+            for(j=1;j<=i;j++){
+            	
+            	document.write("<td>"+j+"*"+i+"="+i*j+"</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");	
+    }
+     biao(7); 
+     
+     
+     
+
+       九九乘法表,隔列换色
+         document.write("<table cellspecing=5>")
+        for(i=1;i<=9;i++){             	
+            document.write("<tr>")
+            for(j=1;j<=i;j++){
+             if(j%2==0){           	 
+              	document.write("<td bgcolor=blue>"+j+"*"+i+"="+i*j+"</td>");
+              }
+              else{
+              	document.write("<td bgcolor=red>"+j+"*"+i+"="+i*j+"</td>");
+              }
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");	
+
+
+
+      用自定义变量，注意${}只能和`` 一起用
+        document.write("<table cellspacing=5 border='1'>")
+        for(var i=1;i<=9;i++){
+           document.write("<tr>");
+           for(var j=1;j<=9;j++){
+           	document.write(`<td>${j}*${i}=${i*j}</td>`)
+           }
+           document.write("</tr>");
+        }
+        document.write("</table>");
+
+
+
+       用变量做九九乘法表
+        var table="<table cellspacing=5 border=1>"
+       	for(i=1;i<=9;i++){
+       		table+="<tr>"
+       		for(j=1;j<=i;j++){
+       			table+="<td>"+i+"*"+j+"="+i*j+"</td>"
+       		}
+       		table+="</tr>"
+       	}        
+       document.write(table);
+
+
+
+       做三角的*
+       function san(x){
+       var hang=prompt("请输入行数:",x);
+       for(var i=1;i<=hang;i++){
+       	 for(var j=1;j<=hang-i;j++){
+       	 	document.write("&nbsp;");
+       	 }
+       	 for(var n=1;n<=2*i-1;n++){
+       	    document.write("*");
+        }
+        document.write("<br/>");
+       }
+    }
+     san(8); 
+     
+     
+     
+      对前两个的数求和
+      he(50);
+      function he(bai){
+      var a=1,b=1;
+      for(c=0;c<=bai;){
+      	c=a+b;
+      	document.write(c+"&nbsp;");
+      	a=b;
+      	b=c;
+         }
+       }
+
+
+  两个数的和
+      var a,c=0;
+      for(a=1;a<=100;a++){
+      	c=c+a;     	
+      	document.write(c+"&nbsp;");
+      }
+      document.write(c);
+      
+      
+      
+      最大值
+      var a=[1,2,3,4,56,6,7,8,9];
+      var max=a[2];
+      for(var i=0;i<=a.length-1;i++){
+      	if(max<a[i]){
+      	 max=a[i];          
+      	}
+      }
+     console.log(max);
+
+
+
+
+    从大到小排序   
+    var b=[1,2,3,4,5];
+    pai(b);
+    var a=[15,78,12,4, ,8,58,79,15];
+    pai(a);
+    function pai(a){
+    
+     for(i=0;i<=a.length-1;i++){
+     	for(j=i+1;j<=a.length-1;j++){
+     		if(a[i]<a[j]){
+     			var th=a[i];
+     			a[i]=a[j];
+     			a[j]=th;
+     		}
+     	}
+     }
+     console.log(a);
+     }
+    
+
+       输出10的数
+     var a=1;
+     while(a<=10){
+     	console.log(a);
+     	a++;
+     }
+
+
+       输出胡10以内数的和
+     var sum=0;
+     var i=1;
+     while(i<=10){
+     	sum=sum+i;
+     	i++;
+     }
+     document.write(sum);
+    
+     var sum=0;
+     var i=1;
+     do{
+     	sum+=i;
+     	i++;
+     }while(i<=10)
+     console.log(sum);
+
+
+  if 条件
+   var i=0;
+   var x="";
+     for (i=0;i<10;i++)
+  {
+  if (i==3)
+    {
+    break;
+    }
+  x=x + "The number is " + i + "<br>";
+  }
+  document.write(x);
+
+
+  continue 的运用
+   var i=0;
+   var x="";
+     for (i=0;i<10;i++)
+  {
+  if (i%2==0)
+    {
+    continue;
+    }
+  x=x + "The number is " + i + "<br>";
+  }
+  document.write(x);
+  
+  
+  
+  除去空格
+  var arr=[12,45,17,4, ,8,15];
+  var ath=[]; 
+  for(i=0;i<arr.length;i++){
+  	if(arr[i]==undefined){
+         continue;
+    }
+    ath[ath.length]=arr[i]; 
+     if(typeof arr[i]!="undefined"){
+     	ath[ath.length]=arr[i];
+     }
+  }
+  console.log(ath);
+
+ 
+ 遍历数组
+  var a1=[11,8,7];
+  var a2=[4,18,16];
+  var a3=[5,6,1];
+  var arr=[a1,a2,a3]; 
+  for(var i=0;i<arr.length;i++){
+  	for(var j=0;j<arr[i].length;j++){
+  		console.log(arr[i][j]);
+  	}
+  }
+  
+  
+  
+  
+  数组最大值
+  var a1=[11,8,7];
+   var a2=[4,18,16];
+   var a3=[5,6,1];
+   var arr=[a1,a2,a3];
+   da(arr);
+  function da(zu){
+   var max=zu[0][0]; 
+     for(var i=0;i<zu.length;i++){
+  	   for(var j=0;j<zu[i].length;j++){
+  		if(max<zu[i][j]){
+  			max=zu[i][j];
+  		}
+  	}
+  }
+console.log(max);
+}
+
+
+   arguments的运用
+   在数组后添加字符
+   注意   i=1  arguments是保存实参的全部参数，故从第一个开始
+	   var th=[1,5,7,6,8];	
+	   push(th,"a","d");
+	   function push(arr){	   
+	   	for(i=1;i<arguments.length;i++){
+	   		arr[arr.length]=arguments[i];
+	   	}
+       console.log(arr);
+	   }
+
+	
+	   // 或  与
+	   // type =type||"<";   "<"默认值
+	   // 三元运算
+	   // type==undefined?">"：type
+	   // 分支
+	   // if(type==underfined){
+    //    type=">"
+    //  } 
+    //  新方法
+    //  function fn(type="默认值")
+     
+	   	
+	   	默认值一般放在最后;
+	   	undefined 虽然赋值了，但仍是默认值
+	   	push(arr，1,8,5,3)
+	   	...value    接收实参的剩余实参  1 8 5 3
+	   	...value 是一个数组，放在形参的最后
+	   	
+	   
+
+
+    从大到小排序
+       var b=[1,5,4,8,9,3]
+       down(b);
+	   function down(arr){
+           for(i=0;i<arr.length;i++){
+           	for(j=0;j<arr.length;j++){
+           	if(arr[i]>arr[j]){
+           		var th=arr[j];
+           		arr[j]=arr[i];
+           		arr[i]=th;
+           	}           	
+           	}
+           }
+           console.log(arr);
+	   } 
+
+
+
+	   数组中是否有，有返回true；否则false；判断是否是数组；长度大于1；  return
+	    最大值，最小值，排序，是否存在，
+	    数组转化为字符串{连接符：4种}，筛选偶数
+        arr数组      str连接符
+        
+        
+        
+        
+        
+        
+       // 数组转化为字符串{连接符：4种}
+        var arr=[1,8,4,6,3];
+        zhuan(arr);
+        console.log(zhuan(arr));
+        
+      function zhuan(arr,str='-'){
+      var re=" ";
+         // str='-'||str;     
+        // str=str==undefined?"-":str;
+        // if(str==undefined){
+        // str="-";
+        // }
+          for(i=0;i<arr.length;i++){
+            if(i<arr.length-1){
+              re+=arr[i]+str;              
+            }else{
+              re+=arr[i];
+            }
+          }
+        return re;
+      }
+	 function zu(arr){
+	 	var nun=" ";
+	 	for(i=0;i<arr.length;i++){
+	 		if(i<arr.length-1){
+               nun=arr[i]+;
+	 		}
+	 	}
+	 }
+	    
+	    
+	    
+	  筛选偶数
+     var arr=[1,8,4,6,3];
+    console.log(ou(arr));
+     function ou(arr){
+     	var newarr=[];
+     	for(i=0;i<arr.length;i++){
+     		if(arr[i]%2==0){
+                newarr[newarr.length]=arr[i];
+                // 注意：arr[i]要赋值给newarr的最后一个
+     		}
+     	}
+     	return newarr;
+     }
+     
+      
+
+     var num=10;
+     function ant(){
+     alert(num);   // undefined    var num='a'只在函数内部起作用，包括ant1
+     var num="a";     
+     alert(num);
+     ant1();      // a
+        function ant1(){
+        alert(num);     // a    
+        }
+      }
+      ant();
+     
+
+
+    var num=10;
+     function ant(){
+     alert(num);   // 10
+     num="a";     
+     alert(num);
+     ant1();      // a
+        function ant1(){
+        alert(num);     // a    
+        }
+      } 
+    ant();
+    
+    
+    
+    
+     var result=math(1,2,bb);
+     console.log(result);
+     function math(num1,num2,fu){
+         return fu(num1,num2);
+     } 
+     function aa(num1,num2){
+     	return num1+num2;
+     }  
+     function bb(num1,num2){
+     	return num1*num2;
+     }
+      function cc(num1,num2){
+     	return num1-num2;
+     }
+
+
+       数组的值都减2
+    arr=[1,8,4,6,3]
+    var result=map(arr,function (value){        //function (value){}为回调函数
+    	return value-2;
+    })
+    console.log(result);
+    function map(arr,fn){
+    	var newarr=[];
+    	for(i=0;i<arr.length;i++){
+           newarr[newarr.length]=fn(arr[i]);
+    	}
+       return newarr;	
+    }
+
+      输出数组中的奇数
+      arr=[12,48,76,73,23,55,4];
+     console.log (map1(arr,function(value){
+     	return value%2==1;
+     }));
+     function map1(arr,fn){
+     	var newarr=[];
+     	for(i=0;i<arr.length;i++){
+     		if(fn(arr[i])==true){
+               newarr[newarr.length]=arr[i]; 
+     		}
+     	}
+     	return newarr;
+     }
+    
+
+   元素首次出现的位置
+  var arr=[4,5,7,2,1,3,9,45];
+  var result=aa(arr,0);
+  console.log(result);
+  function aa(arr,str){
+    for(i=0;i<arr.length;i++){
+      if(arr[i]==str){
+        return i;
+        }
+      }
+      return -1;
+    }
+    
+    
+    
+  输出数组元素的位置  
+  var arr=[4,5,7,2,1,3,9,45];
+  var result=bb(arr,function(value){
+    return value==7;
+  });
+  console.log(result);
+  function bb(arr,fn){
+    for(i=0;i<arr.length;i++){
+      if(fn(arr[i])==true){
+        return i;
+      }
+    }
+    return -1;
+  }
+
+
+  反转   将数组反着遍历
+  function ss(arr){
+    var newarr=[];
+     for(var i=arr.length-1;i>-1;i--){
+      push(newarr,arr[i]);
+     } 
+     return newarr;   
+  }
+  function push(arr,...value){
+    for(var i=0;i<value.length;i++){
+      arr[arr.length]=value[i];
+    }   
+  }
+  var arr=[4,5,7,2,1,3,9,45];
+  console.log(ss(arr));
+  
+
+
+  在任意的位置删除num个数
+  function del(arr,pos,num){
+    var newarr=[];
+    for(i=0;i<arr.length;i++){
+      if(pos<=i&&i<(pos+num)){
+        continue;
+      }
+      newarr[newarr.length]=arr[i];
+    }
+    return newarr;
+  }
+  var arr=[4,5,7,2,1,3,9,45];
+  console.log(del(arr,3,2));
+  
+  
+  
+  在任意的位置添加数组
+  function add(arr,pos,...rest){
+    var newarr=[];
+    for(var i=0;i<pos;i++){
+      newarr[newarr.length]=arr[i];
+    }
+    for(var i=0;i<rest.length;i++){
+      newarr[newarr.length]=rest[i];
+    }
+    for(var i=pos;i<arr.length;i++){
+      newarr[newarr.length]=arr[i];
+    }
+    return newarr;
+  } 
+   var arr=[4,5,7,2,1,3,9,45];
+   var ze=['a','b','c']
+  console.log(add(arr,3,ze));
+ 
+    
+    添加和删除的整合
+    var arr=[4,5,7,2,1,3,9,45];
+    console.log(abc(arr,2,2,'a','b','c'));
+    function abc(arr,pos,num,...rest){
+    var newarr=[];
+    newarr=del(arr,pos,num);
+    if(rest.length>0){
+      newarr=add(newarr,pos,...rest);
+    }
+    return newarr;
+   }
+
+
+   
+
+   数组的元素*2
+    var arr=[4,5,7,2,1,3,9,45];
+    console.log(map(arr,function(value){
+      return value*2;
+    }));
+   function map(arr,fn){
+    var newarr=[];
+    for(var i=0;i<arr.length;i++){
+      newarr[newarr.length]=fn(arr[i]);
+    }
+    return newarr;
+   }
+
+
+
+   数组中的偶数元素
+   var arr=[4,5,7,2,1,3,9,45];
+    console.log(filter(arr,function(value){
+      return value%2==0;
+    }));
+   function filter(arr,fn){
+    var newarr=[];
+    for(i=0;i<arr.length;i++){
+      if(fn(arr[i])){
+        newarr[newarr.length]=arr[i];
+      }
+    }
+    return newarr;
+   }
+   
+   
+   
+   
+   var arr=[4,5,7,2,1,3,9,45];
+   console.log(ever(arr,function(value){
+    return value%2==0;
+   }))
+   需要数组里有一个数符合条件即可
+   function some(arr,fn){
+    for(i=0;i<arr.length;i++){
+      if(fn(arr[i])){
+        return true;
+      }
+    }
+    return false;
+   }
+    需要数组里每一个数都符合条件
+  function ever(arr,fn){
+    for(i=0;i<arr.length;i++){
+      if(!fn(arr[i])){
+        return false;
+      }
+    }
+    return true;
+   }
+  
+  
+  
+  递归函数
+  fn(1)
+  function fn(num){
+    if(num<5){
+      fn(++num);
+    }
+    alert(num);
+  }
+  fn1();
+  function fn1(){
+    fn2();
+    alert(1);
+  }
+  function fn2(){
+    fn3();
+    alert(2);
+  }
+  function fn3(){
+    fn4();
+    alert(3);
+  }
+  function fn4(){
+    alert(4);
+  }
+  
+  
+  var arr=[4,5,7,2,1,3,9,45]; 
+  浅拷贝
+  var arr1=arr;
+  深拷贝
+  var arr=[];
+  for(i=0;i<ar.length;i++){
+    arr1[i]=arr[i];
+  }
+var arr=[1,2,3,4,['x','y','z']];
+var arr1=copy(arr);
+arr1[4][2]='a';
+arr[2]=8;
+console.log(arr);
+console.log(arr1);
+function copy(arr){
+  var newarr=[];
+  for(var i=0;i<arr.length;i++){
+    if(typeof arr[i]=='object'){
+      newarr[i]=copy(arr[i]);
+    }else{
+      newarr[i]=arr[i];
+    }
+  }
+  return newarr;
+}
+
+
+
+var arr=[['x','y','z'],1,2,3,4]
+arr1=copy(arr);
+console.log(arr1);
+ function copy(arr){
+  var newarr=[];
+  for(var i=0;i<arr.length;i++){
+    if(typeof arr[i]=='object'){    //判断数组元素的类型
+      newarr[i]=copy(arr[i]);
+    }else{
+      newarr[i]=arr[i];
+    }
+  }
+  return newarr;
+ }
+ 
+ 
+ // 根据copy在开头或是结尾的位置，输出的结果不同
+ // copy();  
+ // var copy=function() { 
+ //  alert(1);     
+ // }
+ // function copy(){
+ //  alert(2);
+ // }
+ 
+
+
+ 闭包函数
+ function fn(){
+  var num=1;
+  return fn1;     //返回的是fn1整个函数
+  function fn1(){
+    num++;
+    return num;
+  }
+ }
+ var result=fn();   
+ alert(result());    //result()相当于fn1()
+
+
+
+ 箭头函数
+ 一般用在回调函数
+var result=map(arr,function(value){
+return value+2;} );
+Var result=map(arr,(value)=>value+2);
+ 
+
+ var fn=function(a){
+  return a;
+ }
+ var fn=a=>a;
+ alert(fn(10));
+ 1.没有形参   var fn=()=>a;
+ 2.当有几个形参    var fn=(a,b)=>a;
+ 3.函数有多条语句 
+ var fn=(a,b)=>{
+  alert(a+b);
+  lert(a-b);
+  return [a,b];
+ }
+ 注意在箭头函数里没有arguments;
+ 
+var的特性
+ var存在变量的提升
+ for循环完会多一个全局变量
+ alert(num1);    //undefined;
+ alert(num2);    //错误
+ var num1=10;
+ let num2=20;
+
+ let 的特性
+ 不存在变量的提升
+ 存在暂时性的死区       先申明后调用
+ 块级作用域，只在块里面起作用    {  }
+ {
+  let num=10;
+  console.log(num);      //10
+ }
+ console.log(num);      //未定义   发生错误
+ 在未申明之前不能调用
+ 在同一个作用域不能重复申明
+ 局部变量覆盖全局变量
+ var num=10;
+ function fn(){
+  console.log(num);    //undefined
+  if(true){
+    var num='a'; 
+    console.log(num);    //a
+  }
+  console.log(num);       //a
+ }
+ fn();
+ 
+ let num=10;
+ function fn(){
+  console.log(num);    //10
+  if(true){
+    let num='a';
+    console.log(num);    
+  }
+   console.log(num);      //10
+ }
+ fn()
+ 
+ alert(num);      //发生错误
+ let num;
+ alert(num);       //undefined;
+ num=10;
+ alert(num);        //10
+
+ var num=1;
+ var num=2;   会覆盖之前的值
+ let num=10;
+ let num=20;   会发生错误
+
+ let num='abc';
+ {
+  let num=10;
+  {
+    1.console.log(num);     //值 10  20   20
+     num=20;
+    2.let num=20;
+    console.log(num);     //值  20    10    abc
+    3. num =20;
+    console.log(num);      //值   20     20    abc  
+  }
+  console.log(num);       
+ }
+  console.log(num);      
+
+
+   var num='abc';
+ {
+  var num=10;
+  {
+     console.log(num);     //值 10  20   20
+    num=20;
+    2.let num=20;
+    console.log(num);     //值  20    10    10
+    num =20;
+    console.log(num);      //值   20     20    20 
+    console.log(num);         //  值   10    20    20
+    var num=20; 
+    
+  }
+  console.log(num);       
+ }
+  console.log(num);       
+  
+  
+  var arr=[];
+  for(var i=0;i<10;i++){
+    arr[i]=function(){
+      alert(i);
+    }
+  }
+  arr[2]()     //10    全部循环完
+
+   var arr=[];
+  for(let i=0;i<10;i++){
+    arr[i]=function(){
+      alert(i);
+    }
+  }
+  arr[2]()     //2
+  
+  
+  
+  { 
+    console.log(num);    
+    var num=20;
+    console.log(num);
+  }
+console.log(num);
+
+
+不允许修改
+ const a=3.14;
+ a=3.24;      //发生错误
+ console.log(a);
+
+声明的同时赋值
+const p;
+p=3.14;    //发生错误
+
+块级作用域，只在块里面起作用
+{
+  const a=2;
+}
+console.log(a);      //发生错误
+
+
+ 内置顶层函数
+ escape();      将文字转化为字符
+    let aa="贾亚南";
+    console.log(escape(aa));
+    console.log(unescape('%u8D3E%u4E9A%u5357'));
+
+ Number();    把数字型的字符串转化为数值类型
+  let aa="贾亚南"
+  console.log(Number(aa));     //NaN
+   console.log(Number(undefined));  //NaN
+    console.log(Number("123"));     //123
+    console.log(Number(0113));       //75 
+     console.log(Number("0o113"));        //75      
+    console.log(Number("123.00"));       //123
+    console.log(Number("123.12"));       //123.12
+    console.log(Number("123.12.1"));        //nan
+    console.log(Number(0b1111));  //63
+    console.log(Number (true));    //1
+    console.log(Number (false)); //0   
+    console.log(Number (null));  //0  
+    console.log(Number("123px"));   //NaN
+    console.log(Number("abcd"));   //NaN
+    console.log(Number('true'));   //NaN
+    转换为布尔值
+    console.log(Boolean(NaN));  //false     
+    console.log(Boolean(false));  //false
+    console.log(Boolean([]));  //true
+    console.log(Boolean(true));  //true
+    console.log(Boolean(undefined));  //false
+    console.log(Boolean(null));  //false
+    console.log(Boolean(''));  //false
+    console.log(Boolean(0));  //false
+
+   数字、+、-、空格开头
+   第一个数字字符开始到第一个非字符数字结束
+  console.log(parseInt('1234'));  //1234
+  console.log(parseInt('0b111'));  //0
+  console.log(parseInt('100px'));  //100
+  console.log(parseInt('   -1.00px200'));  //-1
+  console.log(parseInt('abcd100'));  //NAN
+  console.log(parseInt('100.5px'));  //100
+  console.log(parseFloat('100.5px'));  //100.5
+  isNAN()  is not a num?
+  console.log(isNaN(false));
+  
+  
+  
+  定义对象  
+  1.通过json方法创建
+  let pos={
+     
+  }
+  console.log(typeof pos);     //object
+  
+  2.通过构造函数方法创建
+  function pos(){
+
+  }
+  let zhang=new pos();
+
+  添加属性
+  zhang.age=18;
+  zhang.name="zhang";
+
+  访问
+  console.log(zhang.name);
+
+
+  zhang.say=function(){
+    alert(zhang.name);
+  }
+	</script>
+</body>
+</html>

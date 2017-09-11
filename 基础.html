@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础知识</title>
+</head>
+<body>
+	<script>
+		警示框
+		alert(1);
+		alert('a');
+		alert('哈')；
+		控制台
+		console.log('hah');
+		文件写入
+		document.write('hah');
+		
+
+		变量
+		var a=1;
+		a=10;
+	  alert(a);     //a  覆盖掉之前的值
+
+
+		算数运算符     //+   -   *  /   %   ++    --
+		var num1=30;
+		var str="我们班有学生";
+		alert(str+num1);    //+作为连字符，结果为  我们班有学生30；
+
+		var num1=30;
+		var str="我们班有学生";
+		var str1=str+num1;
+		alert(str1)       //+作为连字符，结果赋值给str1；结果为 我们班有学生30；
+  
+
+
+		var num1=20;
+		var num2=30;
+		var info="我们班有两个班，第一个班有"+num1+"人,第二个班有"+num2+"人，总共有"+(num1+num2)+"人";
+		alert(info);     
+		
+    模板字符串
+    var str=`我们班有两个班,第一个班有${num1}人,第二个班有${num2}人,总共有${num1+num2}人`
+    alert(str);  //``保持原有格式，${}要与``一起连用
+
+		自增
+		 var num=20;
+		 alert(num++);		//20		 先弹出，后自加
+		 alert(num);			//21
+		
+    var num=20;
+		alert(++num);		    //21
+		alert(num);			   //21
+		
+
+      var num=20;
+		  alert(++num+5);		//26
+		  alert(num);			    //21
+		
+      var num=20;
+		  num=num+8;
+		  alert(num);			  //28
+		
+      var num=20;
+		  alert(3-num++);	     //-17	
+		  alert(num);			      //21
+
+
+		自增与自减区别
+		var a=10,b="20";
+		alert(a-b+b)      //-1020
+		
+
+		比较运算
+		alert(1==true)			true
+		alert(1=="1")		  true
+		alert(1==="1")		  //false  ===除了值相同，类型也需一样
+		
+		两个字符串比较
+		 alert("aa"<"b")			  //true
+		
+		两个数字型字符串
+		alert("10">"2")			false
+	
+
+		数字型字符串与数字
+		alert("10">2)		true
+		
+		非数字型字符串与数字
+		alert(10>"2px")			 //nan		false
+		
+		
+		
+		逻辑运算符
+		与      
+		 console.log(10<7 && 4<6)	false
+		 console.log(10>7 && 4<6)	true 
+		 console.log(10>7 && 4>6)		false
+		 
+		 全真
+		console.log(10 && 7)	 true	7
+		console.log(7 && 10)	true    10
+		一真一假
+		console.log(10<7 && 6)	false	false
+		console.log(6 && 10<7)	false		false
+		全假
+		console.log(0 && 10<7)		false 		0
+		console.log(10<7 && 0)			false 		false
+		
+
+
+		var num=12;
+		console.log(0 && num++)		0
+		console.log(num)		12
+		console.log(num++ && 0)		0
+		console.log(num)		13
+		 
+		alert(2||3); 
+		或
+		var num=12;
+		console.log(1 || num++)		1
+		console.log(num)		12
+		console.log(num++ || 1)		12
+		console.log(num)		13
+		
+		console.log(10<7 || 6<4)		false
+		console.log(10<7 || 4<6)		true
+		console.log(7<10 || 4<6)		true
+		
+		全真
+		console.log(10 || 7)	true 	10
+		console.log(7 || 10)	true	7
+		 
+		一真一假
+		console.log(10 || 0)	true	10
+		console.log(0 || 10)	true 	10
+		
+		一真一假
+		console.log(10 || 0)	true	10
+		console.log(0 || 10)	true 	10
+		
+		全假
+		console.log(0 || 10<7)			false 		false
+		console.log(10<7 || 0)				false 		0
+		
+		三元
+		var flag=21;
+			flag%2===0?alert(true):alert(false)   //值为真，执行第一个值，否则执行第二个值
+		]
+		执行流程
+		单路：
+		var num=12
+		 if(num%2===0){
+		 	alert(true)
+		 }
+
+
+		双路
+		var num=13;
+		if(num%2===0){
+			alert(true)
+		}else{
+			alert(false)
+		}
+
+
+		多路
+		var num=prompt("请录入学生成绩",60);
+		if(num<=100 && num>=90){
+			alert("优秀")
+		}else if(num<90 && num>=80){
+			alert("良好")
+		}else if(num<80 && num>=70){
+			alert("中等")
+		}else if(num<70 && num>=60){
+			alert("及格")
+		}
+		else if(num<60 && num>=0){
+			alert("不及格")
+		}
+		else{
+			alert("错误的信息")
+		}
+    
+    
+    
+		分支结构
+		var week=prompt("输入数值:",2);
+		alert(typeof week);      string类型
+		方法1：改变week的数据类型     case"1"
+		方法2:改变输入的类型     1*prompt("输入数值:",2);   
+		switch(week){
+			case"1":
+			alert("一组");break;
+			不加break；依次执行输入数值之后的语句。
+			case"2":
+			alert("二组");break;
+			case"3":
+			alert("三组");break;
+			case"4":
+			alert("四组");break;
+			case"5":
+			alert("五组");break;
+			case"6":
+			alert("六组");break;
+			default:     //都不满足
+			alert("输入错误");
+		}
+	</script>
+</body>
+</html>
